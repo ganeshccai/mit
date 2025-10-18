@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MIT School</title>
+  <style>
+    df-messenger {
+      --df-messenger-titlebar-color: #0b5394; /* MIT theme color */
+    }
+
+    /* Override shadow DOM for header content */
+    df-messenger::part(titlebar) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    df-messenger::part(title) {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    df-messenger::part(title)::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background-image: url('https://vectorjungal.com/files/preview/960x960/11723056345mhq9h5tfdzeentbyedqxsvgp3s3ujbj7exncjcok6k0eclkuslsykwbgk5gjz1zlyoqahlakgvhrswfyaj4dr8m3mugtewmjqbvf.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+
+    /* Make chatbot frame smaller */
+    .chat-wrapper.chat-open {
+      height: 460px;
+      opacity: 1;
+      transform: translateZ(0px) scale(1);
+      transition: transform 0.2s, opacity 0.2s ease-in;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+    intent="WELCOME"
+    chat-title="MIT_School"
+    agent-id="d4c61ce7-063c-4866-bd06-7591b7e88d0b"
+    language-code="en"
+  ></df-messenger>
+</body>
+</html>
